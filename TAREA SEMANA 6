@@ -1,0 +1,31 @@
+# Clase base Animal
+class Animal:
+    def __init__(self, name, age):
+        self._name = name   # Atributo encapsulado
+        self._age = age     # Atributo encapsulado
+
+    def speak(self):
+        raise NotImplementedError("Subclass must implement abstract method")
+
+    def info(self):
+        print(f"{self._name} is {self._age} years old.")
+
+# Clase derivada Dog
+class Dog(Animal):
+    def speak(self):
+        print(f"{self._name} says Woof!")
+
+# Clase derivada Cat
+class Cat(Animal):
+    def speak(self):
+        print(f"{self._name} says Meow!")
+
+# Creación de objetos y demostración de funcionalidad
+dog = Dog("Buddy", 5)
+cat = Cat("Whiskers", 3)
+
+dog.info()
+dog.speak()
+
+cat.info()
+cat.speak()
